@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Forgery Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+    margin: 0;
+    display: grid;
+    flex-direction: row-reverse; /* Add flex-direction to display elements in a column */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: silver;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 400px;
+    padding: 100px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(18, 113, 30, 0.1);
+    background-color: green;
+}
+
+.logo {
+    font-size: 36px;
+    color: blue;
+    margin-bottom: 10px;
+    animation: logo-rotate 2s linear infinite;
+}
+
+@keyframes logo-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.file-input {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: yellow;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff; /* Add your desired text color */
+    background-color: #a200ff; /* Add your desired background color */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow */
+    animation: result-animation 1s ease-in-out infinite alternate; /* Add animation properties */
+}
+
+@keyframes result-animation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+    </style>
+</head>
+
+
+<body style="background-color: rgb(0, 213, 255); background-image: url("C:\Users\MY\Downloads\temp3.jpeg");">
+
+    <div class="container">
+        <h1 style="font-size: 28px; color: #ff0000; text-align: center; margin-top: 20px;">
+            <i class="fas fa-pencil-alt logo"></i> Signature Forgery Detection
+            <span style="font-size: 14px; color: #00ff00; margin-left: 10px;"></span>
+        </h1>
+        
+        <form name="form" id="form" action="/" method="POST" enctype="multipart/form-data">
+            <div class="file-input">
+                <input type="file" name="original" accept=".png, .jpg">
+                <label><i class="fas fa-image"></i> Original image</label>
+            </div>
+            <div class="file-input">
+                <input type="file" name="fake" accept=".png, .jpg">
+                <label><i class="fas fa-image"></i> Supposed Fake image</label>
+            </div>
+            <button type="submit">Identify forgery</button>
+        </form>
+
+        <p id="result" class="result"></p>
+    </div>
+</body>
+
+</html>
